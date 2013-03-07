@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+	Example XML parameters file to test ParamGUI
+-->
+
+
+<!-- TODO
+	- In the history, consider including more info.
+-->
+
+<TestApp>
+
+	<param>
+		<name>speed</name>
+		<type>float</type>
+		<unit>m/s</unit>
+		<default>1.234</default>
+		<value>3.456</value>
+		<history>
+			<value>1.456</value>
+			<value>2.456</value>
+			<value>5.456</value>
+		</history>
+		<desc>Maximum speed</desc>
+		<lastchange>2013.02.12-07:08:09</lastchange>
+		<lastchanger>Pietro</lastchanger>
+		<modifiable />		<!-- modifiable by the user -->
+		<priority>4</priority>
+	</param>
+
+	<param>
+		<name>photo</name>
+		<type>image</type>
+		<default>default/path/to/file</default>
+		<value>path/to/file</value>
+		<desc>Photo of the item</desc>
+		<lastchange>2013.02.12-07:08:09</lastchange>
+		<lastchanger>TestApp</lastchanger>
+		<constant />		<!-- not modifiable by the user -->
+		<history>
+			<value>path1/to/file</value>
+			<value>path2/to/file</value>
+		</history>
+	</param>
+
+	<param>
+		<name>weight</name>
+		<type>float</type>
+		<value>4.567</value>
+		<desc>Gross weight</desc>
+		<modifiable />
+		<history>
+			<value>5.456</value>
+		</history>
+
+		<!-- Nested parameters -->
+		<param>
+			<name>weight1</name>
+			<type>float</type>
+			<value>3.567</value>
+			<desc>Part1</desc>
+			<modifiable />
+			<history>
+				<value>5.456</value>
+			</history>
+		</param>
+		<param>
+			<name>weight2</name>
+			<type>float</type>
+			<value>0.567</value>
+			<desc>Part2</desc>
+			<modifiable />
+			<history>
+				<value>5.222</value>
+			</history>
+		</param>
+	</param>
+
+</TestApp>
