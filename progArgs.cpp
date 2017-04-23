@@ -9,6 +9,47 @@ using namespace std;
 namespace Utilities {
 
 
+bool IsInteger(const std::string &str)
+{
+	if(str.empty())
+		return false;
+
+	string::size_type pos = 0;
+
+	if(str[0] == '-')
+		pos = 1;
+
+	if(str.find_first_not_of("0123456789", pos) == string::npos)
+		return true;
+
+	return false;
+}
+
+
+bool IsNumber(const std::string &str)
+{
+	if(str.empty())
+		return false;
+
+	string::size_type pos = 0, dotPos = 0;
+
+	// Check decimal point
+	if((dotPos = str.find('.')) != string::npos)
+		if((dotPos = str.find('.', dotPos)) != string::npos)
+			return false;
+
+	pos = 0;
+
+	if(str[0] == '-')
+		pos = 1;
+
+	if(str.find_first_not_of(".0123456789", pos) == string::npos)
+		return true;
+
+	return false;
+}
+
+
 ProgArgs::Argument::Argument(
 		std::string _tag, 
 		std::string _shortTag,
@@ -140,10 +181,12 @@ int ProgArgs::Parse(int _argc, char *_argv[])
 {
 	programName = _argv[0];
 
-    size_t i = 1;
-    while(i < size_t(_argc))
+	size_t argc = size_t(_argc);
+
+	size_t i = 1;
+	while(i < argc)
 	{
-        for(size_t j = 0; j < args.size(); ++j)
+		for(size_t j = 0; j < args.size(); ++j)
 		{
 			if(args[j].tag == _argv[i] || args[j].shortTag == _argv[i])
 			{
@@ -155,7 +198,7 @@ int ProgArgs::Parse(int _argc, char *_argv[])
 
 					if(args[j].valueNeeded) {
 						++i;
-                        if(i >= size_t(_argc)) {
+						if(i >= argc) {
 							cerr << programName << " error:  the argument " << args[j].tag <<
 									" (" << args[j].shortTag << ") needs a value." << endl;
 							exit(1);
@@ -172,7 +215,7 @@ int ProgArgs::Parse(int _argc, char *_argv[])
 
 					if(args[j].valueNeeded) {
 						++i;
-                        if(i >= size_t(_argc)) {
+						if(i >= argc) {
 							cerr << programName << " error:  the argument " << args[j].tag <<
 									" (" << args[j].shortTag << ") needs a value." << endl;
 							exit(1);
@@ -188,16 +231,64 @@ int ProgArgs::Parse(int _argc, char *_argv[])
 		++i;
 	}
 
-	return  0;
+	// Rescan the arguments, counting how many of them are unknown
+
+	/* Warning: a value which is synctactically equal to an argument,
+	 * must be enclosed in double quotes.
+	 */
+
+	int  nUnknownArgs = 0;
+
+	//+TODO - Fix this code; it partially works
+#if 0
+	bool unknown = true;
+
+	i = 1;
+	while(i < argc)
+	{
+		unknown = true;
+
+		cerr << "  _argv[" << i << "][0] = " << _argv[i][0]; //+T+++
+
+		if(IsNumber(_argv[i]))
+		{
+			unknown = false;
+		}
+		else if(_argv[i][0] == '\'' || _argv[i][0] == '\"')
+		{
+			unknown = false;
+		}
+		else
+		{
+			for(size_t j = 0; j < args.size(); ++j)
+			{
+				if(args[j].tag == _argv[i] || args[j].shortTag == _argv[i])
+				{
+					unknown = false;
+					break;
+				}
+			}
+		}
+
+		if(unknown)
+			++nUnknownArgs;
+
+		++i;
+	}
+#endif
+
+	return nUnknownArgs;
 }
 
 
 int ProgArgs::GetArg(int _i, Argument &_arg) const
 {
-    if(_i < 0 || _i >= int(args.size()))
+	const size_t i = size_t(_i);
+
+	if(_i < 0 || i >= args.size())
 		return -1;
 
-	_arg = args[_i];
+	_arg = args[i];
 
 	return 0;
 }
@@ -205,15 +296,16 @@ int ProgArgs::GetArg(int _i, Argument &_arg) const
 
 int ProgArgs::GetValue(const string &_tag, string &_val) const
 {
-    for(size_t i = 0; i < args.size(); ++i)
+	for(size_t i = 0; i < args.size(); ++i)
 	{
-		if(_tag == args[i].tag) {
+		if(_tag == args[i].tag)
+		{
 			_val = args[i].val;
-			return i;
+			return int(i);
 		}
 	}
 
-	return  -1;
+	return -1;
 }
 
 
@@ -224,7 +316,7 @@ int ProgArgs::GetValue(const std::string& _tag, std::string& _val, int _n) const
 {
 	int id = 0;
 
-    for(size_t i = 0; i < args.size(); ++i)
+	for(size_t i = 0; i < args.size(); ++i)
 	{
 		if(_tag == args[i].tag)
 		{
@@ -238,13 +330,13 @@ int ProgArgs::GetValue(const std::string& _tag, std::string& _val, int _n) const
 		}
 	}
 
-	return  -1;
+	return -1;
 }
 
 
 bool ProgArgs::GetValue(const string &_tag) const
 {
-    for (size_t i = 0; i < args.size(); ++i)
+	for(size_t i = 0; i < args.size(); ++i)
 	{
 		if(_tag == args[i].tag)  {
 			if(args[i].present)
@@ -262,7 +354,7 @@ void ProgArgs::Print() const
 {
 	cout << endl;
 
-    for(size_t j = 0; j < args.size(); ++j)
+	for(size_t j = 0; j < args.size(); ++j)
 	{
 		args[j].Print();
 	}
@@ -273,7 +365,7 @@ void ProgArgs::Help() const
 {
 	cout << endl;
 
-    for(size_t j = 0; j < args.size(); ++j)
+	for(size_t j = 0; j < args.size(); ++j)
 	{
 		args[j].Help();
 	}
