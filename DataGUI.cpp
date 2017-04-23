@@ -54,10 +54,12 @@ DataGUI::DataGUI(QWidget *parent)
     createMenus();
     createConnections();
 
-    setWindowTitle(tr("%1 [*]")
-                   .arg(QApplication::applicationName()));
-
     statusBar()->showMessage(tr("Ready"));
+
+    QString title = servedApp + " - " + QApplication::applicationName();
+    setWindowTitle(tr(title.toLatin1().data()));
+
+//+    setWindowTitle(tr("%1 [*]").arg(QApplication::applicationName()));
 
 }
 
