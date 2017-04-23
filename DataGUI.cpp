@@ -41,6 +41,14 @@ DataGUI::DataGUI(QWidget *parent)
       QMainWindow(parent),
       treeParamView(0)
 {
+    SetDatumTag();
+
+    servedApp = "Not connected";
+    servedAppComment = "-";
+    servedAppVersion = "-";
+
+    paramFilePath = ".";
+
     createModelAndView();
     createActions();
     createMenus();
