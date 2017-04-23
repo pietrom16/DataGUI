@@ -1,0 +1,63 @@
+DataGUI - TODO
+
+
+Requirements:
+
+- File formats to exchange data with the core app:
+	-   XML  (pros: universal, structured; cons: inefficient).  http://en.wikipedia.org/wiki/XML_data_binding
+	--> JSON (pros: simple, structured, efficient; cons: ).     http://www.json.org/
+	-   YAML (pros: JSON superset; cons: ).                     http://en.wikipedia.org/wiki/YAML
+	-   Plain text format (pros: simple; cons: unstructured).
+	-   Google Protocol Buffers: ?
+
+- Allow to use a ram disk, a hard disk or a remote device to store data.
+    In UNIX this is completely transparent.
+
+- For each parameter, show the date of the last change.
+
+- Allow to visualize data in different formats (e.g. trees, tables, lists, plots, ...).
+	- Automatically group data items in tree branches/tables/tabs/... according to their nesting in the input data structure.
+	  Doing so the appearance of the data can be implicitly determined by the input file structure.
+
+- Move the data that changed since the previous transfer only.
+	- Use a file to store the whole data, and one to store the deltas.
+	- At the beginning all the available data will be sent.
+	- With the following iterations, just move what changed.
+	- If a new tag is sent, add it.
+	- If an existing tag is sent, update its corresponding value and date.
+	- This point has less priority in case the RAM disk is used.
+
+- See if a file is the best way to transfer data, or if there is a better solution (e.g. message queue, ...).
+  Ref.: http://en.wikipedia.org/wiki/Interprocess_communication
+
+- Considerations
+    - Some of these functionalities are typical of:
+		- Spreadsheets:
+		 	- Cons: not optimized for partial data changes; no tree structure.
+		- Databases:
+		    - Cons: overkill for this task.
+
+
+Implementation:
+
+- QT
+    - Use a QTreeView, not a QTreeWidget
+	    - The tree and the data are separated. More flexibility.
+		- Different representation of the same data.
+		- ParamGUI2, DataGUI
+
+Customization:
+
+	- Load details about the core application to display in the corresponding dialog and on the title bar.
+	- Load an icon to show on the GUI (useful to differentiate multiple GUIs for different apps).
+
+
+References:
+
+	http://doc.qt.io/qt-5/qtwidgets-itemviews-simpletreemodel-example.html
+	http://doc.qt.io/qt-5/qtwidgets-itemviews-editabletreemodel-example.html
+	http://doc.qt.io/qt-5/qjsondocument.html
+	http://doc.qt.io/qt-5/qtwidgets-itemviews-simplewidgetmapper-example.html
+	http://doc.qt.io/qt-5/qtwidgets-itemviews-combowidgetmapper-example.html
+	http://doc.qt.io/qt-5/qtwidgets-itemviews-chart-example.html
+	
