@@ -59,6 +59,16 @@ DataGUI::~DataGUI()
 
 
 void DataGUI::fileOpen(){}
+void DataGUI::contextMenuEvent(QContextMenuEvent *event)
+{
+    //+TODO
+    /*
+    QMenu menu(this);
+    menu.addAction(fileOpenAction);
+    menu.exec(event->globalPos());
+    */
+}
+
 
 
 void DataGUI::fileRefresh(){}
