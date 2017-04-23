@@ -62,7 +62,7 @@ private:
     QAction *aboutAct;
     QAction *aboutQtAct;
 
-    QTreeView *treeView;
+    QTreeView *treeParamView;
 
 };
 

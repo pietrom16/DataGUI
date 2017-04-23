@@ -37,7 +37,9 @@ const QString DataGUI::defaultDatumTag = "param";
 
 
 DataGUI::DataGUI(QWidget *parent)
-    : QMainWindow(parent)
+    :
+      QMainWindow(parent),
+      treeParamView(0)
 {
     createModelAndView();
     createActions();
