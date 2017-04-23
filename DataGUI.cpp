@@ -61,6 +61,8 @@ DataGUI::DataGUI(QWidget *parent)
 
 //+    setWindowTitle(tr("%1 [*]").arg(QApplication::applicationName()));
 
+    setMinimumSize(160, 160);
+    resize(480, 320);
 }
 
 
