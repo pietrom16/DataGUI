@@ -11,7 +11,6 @@
 #include <string>
 #include <QApplication>
 
-using namespace std;
 using namespace Utilities;
 
 static const int vers = 0, subvers = 0, subsubvers = 1;
@@ -23,7 +22,7 @@ int main(int argc, char *argv[])
 
     ProgArgs            arguments;
     ProgArgs::Argument  arg;
-    string              value;
+	std::string         value;
 
     // Add the set of possible parameters:
     arg.Set("--parameters", "-p", "Path of the XML parameters file");
