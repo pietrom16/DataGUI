@@ -24,3 +24,6 @@ HEADERS += \
 
 OTHER_FILES += \
     TODO
+
+RESOURCES += \
+    DataGUI.qrc
