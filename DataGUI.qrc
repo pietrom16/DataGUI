@@ -1,1 +1,14 @@
-<RCC/>
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>images/database-1.svg</file>
+	<file>images/server-1.svg</file>
+	<file>images/server-1.png</file>
+	<file>images/pause-1.svg</file>
+	<file>images/reload.svg</file>
+	<file>images/search-1.svg</file>
+	<file>images/settings-5.svg</file>
+	<file>images/info.svg</file>
+	<file>images/exit.svg</file>
+</qresource>
+</RCC>
+

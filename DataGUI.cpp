@@ -70,7 +70,6 @@ DataGUI::~DataGUI()
 {}
 
 
-void DataGUI::fileOpen(){}
 void DataGUI::contextMenuEvent(QContextMenuEvent *event)
 {
     //+TODO
@@ -81,6 +80,11 @@ void DataGUI::contextMenuEvent(QContextMenuEvent *event)
     */
 }
 
+
+void DataGUI::fileOpen()
+{
+
+}
 
 
 void DataGUI::fileRefresh(){}
@@ -120,27 +124,27 @@ void DataGUI::createModelAndView(){}
 
 void DataGUI::createActions()
 {
-    //+T+ add icons
-    fileOpenAction = createAction("", tr("Open..."), this, QKeySequence::Open);
-    fileSaveAction = createAction("", tr("Save"), this, QKeySequence::Save);
-    fileSaveAsAction = createAction("", tr("Save As..."), this, QKeySequence::SaveAs);
-    fileCloseAction = createAction("", tr("Close"), this, QKeySequence::Close);
-    fileQuitAction = createAction("", tr("Quit"), this, QKeySequence::Quit);
-/*
-    fileOpenAction = createAction(":/fileopen.png", tr("Open..."),
-            this, QKeySequence::Open);
-    fileSaveAction = createAction(":/filesave.png", tr("Save"),
-            this, QKeySequence::Save);
-    fileSaveAsAction = createAction(":/filesave.png", tr("Save As..."),
-            this, QKeySequence::SaveAs);
-    fileCloseAction = createAction(":/fileclose.png", tr("Close"),
-            this, QKeySequence::Close);
-    fileQuitAction = createAction(":/filequit.png", tr("Quit"),
-            this, QKeySequence::Quit);
-*/
-    //+D? fileQuitAction->setShortcuts(QKeySequence::Quit);
-
-    aboutAct = new QAction(tr("&About"), this);
+//+	databaseConnectAct = createAction(":/database-1.svg", tr("Database"), this);
+//+	databaseConnectAct->setStatusTip(tr("Connect to database"));
+//+B	serverConnectAct = createAction(":/server-1.svg", tr("Server"), this);
+//+B	serverConnectAct = createAction(":/server-1.png", tr("Server"), this);
+	serverConnectAct = createAction("", tr("Server"), this);
+	serverConnectAct->setStatusTip(tr("Connect to application server"));
+/*	pauseAct = createAction(":/pause-1.svg", tr("&Pause"), this);
+	pauseAct->setStatusTip(tr("Pause updates"));
+	reloadAct = createAction(":/reload.svg", tr("&Reload"), this);
+	reloadAct->setStatusTip(tr("Reload data"));
+	searchAct = createAction(":/search-1.svg", tr("&Search"), this);
+	searchAct->setStatusTip(tr("Search for variables"));
+	settingsAct = createAction(":/settings-5.svg", tr("Settings"), this);
+	settingsAct->setStatusTip(tr("GUI settings"));
+	infoAct = createAction(":/info.svg", tr("&Info"), this);
+	infoAct->setStatusTip(tr("Information"));
+	terminateServerAct = createAction(":/exit.svg", tr("Quit server"), this);
+	terminateServerAct->setStatusTip(tr("Terminate the server. The GUI will keep running"));
+	quitGuiAct = createAction(":/exit.svg", tr("Quit GUI"), this, QKeySequence::Quit);
+	quitGuiAct->setStatusTip(tr("Exit the GUI only. The server will keep running"));
+*/	aboutAct = new QAction(tr("&About"), this);
     aboutAct->setStatusTip(tr("Copyright information"));
     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
@@ -153,20 +157,24 @@ void DataGUI::createActions()
 
 void DataGUI::createMenus()
 {
-    QMenu *fileMenu = menuBar()->addMenu(tr("File"));
-    QToolBar *fileToolBar = addToolBar(tr("File"));
+	QMenu *connectionMenu = menuBar()->addMenu(tr("Connection"));
+	QToolBar *toolBar = addToolBar(tr("Connection"));
 
-    fileMenu->addAction(fileOpenAction);
-    fileToolBar->addAction(fileOpenAction);
-    fileMenu->addAction(fileSaveAction);
-    fileToolBar->addAction(fileSaveAction);
-    fileSaveAction->setEnabled(false);
-    fileMenu->addAction(fileSaveAsAction);
-    fileSaveAsAction->setEnabled(false);
-
-    fileMenu->addSeparator();
-    fileMenu->addAction(fileQuitAction);
-
+	connectionMenu->addAction(serverConnectAct);
+	connectionMenu->addSeparator();
+/*	connectionMenu->addAction(pauseAct);
+	toolBar->addAction(pauseAct);
+	//fileSaveAction->setEnabled(false);
+	connectionMenu->addAction(reloadAct);
+	toolBar->addAction(reloadAct);
+	connectionMenu->addSeparator();
+	connectionMenu->addAction(searchAct);
+	connectionMenu->addAction(settingsAct);
+	connectionMenu->addAction(infoAct);
+	connectionMenu->addSeparator();
+	connectionMenu->addAction(terminateServerAct);
+	connectionMenu->addAction(quitGuiAct);
+*/
     QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
     helpMenu->addAction(aboutAct);
     helpMenu->addAction(aboutQtAct);

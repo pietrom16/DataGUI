@@ -56,13 +56,20 @@ private:
     void createMenus();
     void createConnections();
 
+    int ReadXML(QIODevice *device);
+    int WriteXML(QIODevice *device);
+
 private:
-    QAction *fileOpenAction;
-    QAction *fileSaveAction;
-    QAction *fileSaveAsAction;
-    QAction *fileCloseAction;
-    QAction *fileQuitAction;
-    QAction *aboutAct;
+	QAction *databaseConnectAct;
+	QAction *serverConnectAct;
+	QAction *pauseAct;
+	QAction *reloadAct;
+	QAction *searchAct;
+	QAction *settingsAct;
+	QAction *infoAct;
+	QAction *terminateServerAct;
+	QAction *quitGuiAct;
+	QAction *aboutAct;
     QAction *aboutQtAct;
 
     QTreeView *treeParamView;

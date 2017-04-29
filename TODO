@@ -19,6 +19,8 @@ Requirements:
 	- Automatically group data items in tree branches/tables/tabs/... according to their nesting in the input data structure.
 	  Doing so the appearance of the data can be implicitly determined by the input file structure.
 
+- Allow to save/load snapshots of the current values.
+
 - Move the data that changed since the previous transfer only.
 	- Use a file to store the whole data, and one to store the deltas.
 	- At the beginning all the available data will be sent.
