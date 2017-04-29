@@ -124,31 +124,29 @@ void DataGUI::createModelAndView(){}
 
 void DataGUI::createActions()
 {
-//+	databaseConnectAct = createAction(":/database-1.svg", tr("Database"), this);
-//+	databaseConnectAct->setStatusTip(tr("Connect to database"));
-//+B	serverConnectAct = createAction(":/server-1.svg", tr("Server"), this);
+	databaseConnectAct = createAction(""/*":/database-1.svg"*/, tr("Database"), this);
+	databaseConnectAct->setStatusTip(tr("Connect to database"));
+	serverConnectAct = createAction(""/*":/server-1.svg"*/, tr("Server"), this);
 //+B	serverConnectAct = createAction(":/server-1.png", tr("Server"), this);
-	serverConnectAct = createAction("", tr("Server"), this);
 	serverConnectAct->setStatusTip(tr("Connect to application server"));
-/*	pauseAct = createAction(":/pause-1.svg", tr("&Pause"), this);
+	pauseAct = createAction(""/*":/pause-1.svg"*/, tr("&Pause"), this);
 	pauseAct->setStatusTip(tr("Pause updates"));
-	reloadAct = createAction(":/reload.svg", tr("&Reload"), this);
+	reloadAct = createAction(""/*":/reload.svg"*/, tr("&Reload"), this);
 	reloadAct->setStatusTip(tr("Reload data"));
-	searchAct = createAction(":/search-1.svg", tr("&Search"), this);
+	searchAct = createAction(""/*":/search-1.svg"*/, tr("&Search"), this);
 	searchAct->setStatusTip(tr("Search for variables"));
-	settingsAct = createAction(":/settings-5.svg", tr("Settings"), this);
+	settingsAct = createAction(""/*":/settings-5.svg"*/, tr("Settings"), this);
 	settingsAct->setStatusTip(tr("GUI settings"));
-	infoAct = createAction(":/info.svg", tr("&Info"), this);
+	infoAct = createAction(""/*":/info.svg"*/, tr("&Info"), this);
 	infoAct->setStatusTip(tr("Information"));
-	terminateServerAct = createAction(":/exit.svg", tr("Quit server"), this);
+	terminateServerAct = createAction(""/*":/exit.svg"*/, tr("Quit server"), this);
 	terminateServerAct->setStatusTip(tr("Terminate the server. The GUI will keep running"));
-	quitGuiAct = createAction(":/exit.svg", tr("Quit GUI"), this, QKeySequence::Quit);
+	quitGuiAct = createAction(""/*":/exit.svg"*/, tr("&Quit GUI"), this, QKeySequence::Quit);
 	quitGuiAct->setStatusTip(tr("Exit the GUI only. The server will keep running"));
-*/	aboutAct = new QAction(tr("&About"), this);
+	aboutAct = new QAction(tr("About"), this);
     aboutAct->setStatusTip(tr("Copyright information"));
     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
-
-    aboutQtAct = new QAction(tr("About &Qt"), this);
+	aboutQtAct = new QAction(tr("About Qt"), this);
     aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
     connect(aboutQtAct, SIGNAL(triggered()), this, SLOT(aboutQt()));
@@ -162,7 +160,7 @@ void DataGUI::createMenus()
 
 	connectionMenu->addAction(serverConnectAct);
 	connectionMenu->addSeparator();
-/*	connectionMenu->addAction(pauseAct);
+	connectionMenu->addAction(pauseAct);
 	toolBar->addAction(pauseAct);
 	//fileSaveAction->setEnabled(false);
 	connectionMenu->addAction(reloadAct);
@@ -174,7 +172,7 @@ void DataGUI::createMenus()
 	connectionMenu->addSeparator();
 	connectionMenu->addAction(terminateServerAct);
 	connectionMenu->addAction(quitGuiAct);
-*/
+
     QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
     helpMenu->addAction(aboutAct);
     helpMenu->addAction(aboutQtAct);
