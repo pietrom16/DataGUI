@@ -102,7 +102,7 @@ void DataGUI::about()
     QString message =
             "<p><b>" + servedApp + "</b> vers. " + servedAppVersion + " - " + servedAppComment + "</p>"
             "<p><b>DataGUI</b> vers. " + version + " - A GUI to view and modify data of a core application.</p>"
-            "<p>Copyright 2013 Pietro Mele</p>"
+	        "<p>Copyright (C) 2013-2017 Pietro Mele</p>"
             ;
 
     QMessageBox::about(this,

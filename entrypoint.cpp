@@ -2,8 +2,7 @@
 
 
 /*
-    Copyright (c) 2013 Pietro Mele. All rights reserved.
-
+	Copyright (C) 2013-2017 Pietro Mele.
 */
 
 #include "DataGUI.hpp"
