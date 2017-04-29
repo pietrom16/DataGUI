@@ -145,11 +145,8 @@ void DataGUI::createActions()
 	quitGuiAct->setStatusTip(tr("Exit the GUI only. The server will keep running"));
 	aboutAct = new QAction(tr("About"), this);
     aboutAct->setStatusTip(tr("Copyright information"));
-    connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 	aboutQtAct = new QAction(tr("About Qt"), this);
     aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
-    connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
-    connect(aboutQtAct, SIGNAL(triggered()), this, SLOT(aboutQt()));
 }
 
 
@@ -179,7 +176,12 @@ void DataGUI::createMenus()
 }
 
 
-void DataGUI::createConnections(){}
+void DataGUI::createConnections()
+{
+	connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+	connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+	connect(aboutQtAct, SIGNAL(triggered()), this, SLOT(aboutQt()));
+}
 
 
 } // Utilities
