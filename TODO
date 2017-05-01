@@ -39,6 +39,7 @@ Requirements:
 		- Databases:
 		    - Cons: overkill for this task.
 
+- Log user operations (different purposes: diagnostic, automated sets of operations, ...)
 
 Implementation:
 

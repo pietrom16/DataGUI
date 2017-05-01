@@ -119,6 +119,13 @@ void DataGUI::aboutQt()
 {}
 
 
+void DataGUI::quitGui()
+{
+	//+TODO - Ask whether to save
+	exit(0);
+}
+
+
 void DataGUI::createModelAndView(){}
 
 
@@ -178,6 +185,7 @@ void DataGUI::createMenus()
 
 void DataGUI::createConnections()
 {
+	connect(quitGuiAct, SIGNAL(triggered()), this, SLOT(quitGui()));
 	connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 	connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
 	connect(aboutQtAct, SIGNAL(triggered()), this, SLOT(aboutQt()));

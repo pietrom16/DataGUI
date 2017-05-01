@@ -47,7 +47,8 @@ private slots:
     bool fileSave();
     bool fileSaveAs();
     bool fileClose();
-    void about();
+	void quitGui();
+	void about();
     void aboutQt();
 
 private:
