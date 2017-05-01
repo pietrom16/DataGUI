@@ -41,6 +41,10 @@ Requirements:
 
 - Log user operations (different purposes: diagnostic, automated sets of operations, ...)
 
+- Options to send back the new values:
+    - For each value modified by the user, as soon as the change takes place.
+	- For a bunch of changes, when the user presses the [commit]/[send]/[update]/... button.
+
 Implementation:
 
 - QT
