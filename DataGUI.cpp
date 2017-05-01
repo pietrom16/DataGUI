@@ -152,8 +152,6 @@ void DataGUI::createActions()
 	quitGuiAct->setStatusTip(tr("Exit the GUI only. The server will keep running"));
 	aboutAct = new QAction(tr("About"), this);
     aboutAct->setStatusTip(tr("Copyright information"));
-	aboutQtAct = new QAction(tr("About Qt"), this);
-    aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
 }
 
 
@@ -178,6 +176,8 @@ void DataGUI::createMenus()
 	connectionMenu->addAction(quitGuiAct);
 
     QMenu *helpMenu = menuBar()->addMenu(tr("Help"));
+	aboutQtAct = helpMenu->addAction(tr("About Qt"), qApp, &QApplication::aboutQt);
+	aboutQtAct->setStatusTip(tr("Show the Qt library's About box"));
     helpMenu->addAction(aboutAct);
     helpMenu->addAction(aboutQtAct);
 }
