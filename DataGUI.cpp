@@ -177,6 +177,14 @@ void DataGUI::createMenus()
 
 void DataGUI::createConnections()
 {
+	connect(databaseConnectAct, &QAction::triggered, this, &DataGUI::databaseConnect);
+	connect(serverConnectAct, &QAction::triggered, this, &DataGUI::serverConnect);
+	connect(pauseAct, &QAction::triggered, this, &DataGUI::pause);
+	connect(reloadAct, &QAction::triggered, this, &DataGUI::reload);
+	connect(searchAct, &QAction::triggered, this, &DataGUI::search);
+	connect(settingsAct, &QAction::triggered, this, &DataGUI::settings);
+	connect(infoAct, &QAction::triggered, this, &DataGUI::info);
+	connect(terminateServerAct, &QAction::triggered, this, &DataGUI::terminateServer);
 	connect(quitGuiAct, &QAction::triggered, this, &DataGUI::quitGui);
 	connect(aboutAct, &QAction::triggered, this, &DataGUI::about);
 }
