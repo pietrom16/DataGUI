@@ -27,3 +27,9 @@ OTHER_FILES += \
 
 RESOURCES += \
     DataGUI.qrc
+
+DISTFILES += \
+    LICENSE \
+    README.md \
+    gitignore \
+    LICENSE_3rdParty
