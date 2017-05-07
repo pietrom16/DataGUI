@@ -59,6 +59,9 @@ Customization:
 	- Load an icon to show on the GUI (useful to differentiate multiple GUIs for different apps).
 
 
+Bugs:
+    - Cannot commit the icons in git; gitignore is fine.
+
 References:
 
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-simpletreemodel-example.html

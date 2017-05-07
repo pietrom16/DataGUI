@@ -131,24 +131,23 @@ void DataGUI::createModelAndView(){}
 
 void DataGUI::createActions()
 {
-	databaseConnectAct = createAction(""/*":/database-1.svg"*/, tr("Database"), this);
+	databaseConnectAct = createAction(":/images/database-1.svg", tr("Database"), this);
 	databaseConnectAct->setStatusTip(tr("Connect to database"));
-	serverConnectAct = createAction(""/*":/server-1.svg"*/, tr("Server"), this);
-//+B	serverConnectAct = createAction(":/server-1.png", tr("Server"), this);
+	serverConnectAct = createAction(":/images/server-1.svg", tr("Server"), this);
 	serverConnectAct->setStatusTip(tr("Connect to application server"));
-	pauseAct = createAction(""/*":/pause-1.svg"*/, tr("&Pause"), this);
+	pauseAct = createAction(":/images/pause-1.svg", tr("&Pause"), this);
 	pauseAct->setStatusTip(tr("Pause updates"));
-	reloadAct = createAction(""/*":/reload.svg"*/, tr("&Reload"), this);
+	reloadAct = createAction(":/images/reload.svg", tr("&Reload"), this);
 	reloadAct->setStatusTip(tr("Reload data"));
-	searchAct = createAction(""/*":/search-1.svg"*/, tr("&Search"), this);
+	searchAct = createAction(":/images/search-1.svg", tr("&Search"), this);
 	searchAct->setStatusTip(tr("Search for variables"));
-	settingsAct = createAction(""/*":/settings-5.svg"*/, tr("Settings"), this);
+	settingsAct = createAction(":/images/settings-5.svg", tr("Settings"), this);
 	settingsAct->setStatusTip(tr("GUI settings"));
-	infoAct = createAction(""/*":/info.svg"*/, tr("&Info"), this);
+	infoAct = createAction(":/images/info.svg", tr("&Info"), this);
 	infoAct->setStatusTip(tr("Information"));
-	terminateServerAct = createAction(""/*":/exit.svg"*/, tr("Quit server"), this);
+	terminateServerAct = createAction(":/images/exit.svg", tr("Quit server"), this);
 	terminateServerAct->setStatusTip(tr("Terminate the server. The GUI will keep running"));
-	quitGuiAct = createAction(""/*":/exit.svg"*/, tr("&Quit GUI"), this, QKeySequence::Quit);
+	quitGuiAct = createAction(":/images/exit.svg", tr("&Quit GUI"), this, QKeySequence::Quit);
 	quitGuiAct->setStatusTip(tr("Exit the GUI only. The server will keep running"));
 	aboutAct = new QAction(tr("About"), this);
     aboutAct->setStatusTip(tr("Copyright information"));
