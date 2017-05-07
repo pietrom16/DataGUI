@@ -92,6 +92,11 @@ int DataGUI::info(){}
 int DataGUI::terminateServer(){}
 
 
+int DataGUI::quitGui()
+{
+	//+TODO - Ask whether to save
+	exit(0);
+}
 
 
 void DataGUI::about()
@@ -112,13 +117,6 @@ void DataGUI::about()
 
 void DataGUI::aboutQt()
 {}
-
-
-void DataGUI::quitGui()
-{
-	//+TODO - Ask whether to save
-	exit(0);
-}
 
 
 void DataGUI::createModelAndView(){}
