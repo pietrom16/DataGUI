@@ -81,22 +81,17 @@ void DataGUI::contextMenuEvent(QContextMenuEvent *event)
 }
 
 
-void DataGUI::fileOpen()
-{
-
-}
-
-
-void DataGUI::fileRefresh(){}
-
-
-bool DataGUI::fileSave(){}
-
-
-bool DataGUI::fileSaveAs(){}
+//+TODO
+int DataGUI::databaseConnect(){}
+int DataGUI::serverConnect(){}
+int DataGUI::pause(){}
+int DataGUI::reload(){}
+int DataGUI::search(){}
+int DataGUI::settings(){}
+int DataGUI::info(){}
+int DataGUI::terminateServer(){}
 
 
-bool DataGUI::fileClose(){}
 
 
 void DataGUI::about()

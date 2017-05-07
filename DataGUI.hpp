@@ -42,12 +42,15 @@ private:
     static const QString defaultDatumTag;
 
 private slots:
-    void fileOpen();
-    void fileRefresh();
-    bool fileSave();
-    bool fileSaveAs();
-    bool fileClose();
-	void quitGui();
+	int databaseConnect();
+	int serverConnect();
+	int pause();
+	int reload();
+	int search();
+	int settings();
+	int info();
+	int terminateServer();
+	int quitGui();
 	void about();
     void aboutQt();
 
