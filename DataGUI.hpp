@@ -28,6 +28,8 @@ public:
     void SetDatumTag()                    { datumTag = defaultDatumTag; }
     void SetDatumTag(const QString &dTag) { datumTag = dTag; }
 
+	int Test();
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event);
 

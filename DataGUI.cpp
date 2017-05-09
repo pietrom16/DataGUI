@@ -70,6 +70,12 @@ DataGUI::~DataGUI()
 {}
 
 
+int DataGUI::Test()
+{
+	return 0;
+}
+
+
 void DataGUI::contextMenuEvent(QContextMenuEvent *event)
 {
     //+TODO
