@@ -4,11 +4,14 @@ DataGUI - TODO
 Requirements:
 
 - File formats to exchange data with the core app:
-    ==> Plain text format, tag/value (pros: simple; cons: unstructured).
-	--> JSON (pros: simple, structured, efficient; cons: ).     http://www.json.org/
-	-   XML  (pros: universal, structured; cons: inefficient).  http://en.wikipedia.org/wiki/XML_data_binding
+	-   Google Protocol Buffers (pros: fast; cons:)             https://developers.google.com/protocol-buffers/
+	-   JSON (pros: simple, structured, efficient; cons: ).     http://www.json.org/ ; https://github.com/nlohmann/json
 	-   YAML (pros: JSON superset; cons: ).                     http://en.wikipedia.org/wiki/YAML
-	-   Google Protocol Buffers: ?
+	-   BSON (Binary JSON)  (pros:;cons:)                       http://bsonspec.org/
+	-   PSON (Protocol JSON)  (pros:;cons:)                     https://github.com/dcodeIO/PSON
+	-   XML  (pros: universal, structured; cons: inefficient).  http://en.wikipedia.org/wiki/XML_data_binding
+	-   Plain text format, tag/value (pros: simple; cons: unstructured).
+	
 
 - Allow to use a ram disk, a hard disk or a remote device to store data.
     In UNIX this is completely transparent.
