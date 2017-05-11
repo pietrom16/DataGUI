@@ -70,4 +70,5 @@ References:
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-simplewidgetmapper-example.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-combowidgetmapper-example.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-chart-example.html
+	https://github.com/dridk/QJsonModel   (JSON + QTreeView)
 	
