@@ -30,11 +30,6 @@ public:
     explicit DataGUI(QWidget *parent = 0);
     ~DataGUI();
 
-    // Set/get XML tag that represents a datum
-    QString GetDatumTag() const           { return datumTag; }
-    void SetDatumTag()                    { datumTag = defaultDatumTag; }
-    void SetDatumTag(const QString &dTag) { datumTag = dTag; }
-
 	int Test();
 
 protected:
@@ -46,9 +41,6 @@ private:
     QString paramFilePath;
     QString configFilePath;
     QString servedApp, servedAppComment, servedAppVersion;
-
-    QString datumTag;   // XML tag that identifies a datum
-    static const QString defaultDatumTag;
 
 private slots:
 	int databaseConnect();
@@ -68,9 +60,6 @@ private:
     void createActions();
     void createMenus();
     void createConnections();
-
-    int ReadXML(QIODevice *device);
-    int WriteXML(QIODevice *device);
 
 private:
 	QAction *databaseConnectAct;
