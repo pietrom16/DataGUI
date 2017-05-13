@@ -33,7 +33,6 @@ namespace GuiUtilities {
 
 const char* const DataGUI::version = "0.0.3";
 
-const QString DataGUI::defaultDatumTag = "param";
 
 
 DataGUI::DataGUI(QWidget *parent)
@@ -41,8 +40,6 @@ DataGUI::DataGUI(QWidget *parent)
       QMainWindow(parent),
       treeParamView(0)
 {
-    SetDatumTag();
-
     servedApp = "Not connected";
     servedAppComment = "-";
     servedAppVersion = "-";
