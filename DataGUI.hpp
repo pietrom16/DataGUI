@@ -4,15 +4,22 @@
 #ifndef DATAGUI_HPP
 #define DATAGUI_HPP
 
+#include <QIODevice>
 #include <QMainWindow>
 
 class QAction;
-class QStandardItem;
+class QIcon;
+class QJsonItem;
+class QJsonModel;
 class QModelIndex;
+class QStandardItem;
 class QTreeView;
 class QWidget;
 
 namespace GuiUtilities {
+
+class TreeItem;
+class TreeModel;
 
 
 class DataGUI : public QMainWindow
