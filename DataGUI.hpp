@@ -39,8 +39,12 @@ private:
     static const char* const version;
 
     QString paramFilePath;
+    QIODevice::OpenModeFlag openMode = QIODevice::ReadOnly; // ReadWrite
     QString configFilePath;
     QString servedApp, servedAppComment, servedAppVersion;
+
+    int  refreshDelay = 1000;    // milliseconds
+    bool modifiedData = false;
 
 private slots:
 	int databaseConnect();
