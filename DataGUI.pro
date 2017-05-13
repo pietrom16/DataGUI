@@ -1,7 +1,6 @@
 #-------------------------------------------------
 #
-# DataGUI
-# Project created by QtCreator 2013-03-02T23:12:19
+# Project: DataGUI
 #
 #-------------------------------------------------
 
@@ -16,11 +15,17 @@ TEMPLATE = app
 SOURCES += \
 	DataGUI.cpp \
 	entrypoint.cpp \
-	progArgs.cpp
+    progArgs.cpp \
+    TreeItem.cpp \
+    JsonTree.cpp \
+    TreeModel.cpp
 
 HEADERS += \
 	DataGUI.hpp \
-	progArgs.h
+    progArgs.h \
+    TreeItem.hpp \
+    JsonTree.hpp \
+    TreeModel.hpp
 
 OTHER_FILES += \
     TODO
