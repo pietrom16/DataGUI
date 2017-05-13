@@ -12,7 +12,7 @@ class QModelIndex;
 class QTreeView;
 class QWidget;
 
-namespace Utilities {
+namespace GuiUtilities {
 
 
 class DataGUI : public QMainWindow
@@ -83,6 +83,6 @@ private:
 };
 
 
-} // Utilities
+} // GuiUtilities
 
 #endif // DATAGUI_HPP

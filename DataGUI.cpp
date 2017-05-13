@@ -28,7 +28,7 @@ QAction *createAction(const QString &icon, const QString &text,
 } // anonymous namespace
 
 
-namespace Utilities {
+namespace GuiUtilities {
 
 
 const char* const DataGUI::version = "0.0.3";
@@ -196,4 +196,4 @@ void DataGUI::createConnections()
 }
 
 
-} // Utilities
+} // GuiUtilities

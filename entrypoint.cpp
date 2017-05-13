@@ -11,6 +11,7 @@
 #include <string>
 #include <QApplication>
 
+using namespace GuiUtilities;
 using namespace Utilities;
 
 static const int vers = 0, subvers = 0, subsubvers = 1;
