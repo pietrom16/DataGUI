@@ -4,9 +4,9 @@ DataGUI - TODO
 Requirements:
 
 - File formats to exchange data with the core app:
-2	==> Cap’n Proto (pros:fastest,compact; cons:)                    https://capnproto.org/
+2	--> Cap’n Proto (pros:fastest,compact; cons:)                    https://capnproto.org/
     ->  ProtoBuf (pros:fast,compact,comments; cons:)                 https://developers.google.com/protocol-buffers/
-1	->  JSON (pros:simple,structured,efficient,standard; cons:).     http://www.json.org/ ; https://github.com/nlohmann/json
+1	==> JSON (pros:simple,structured,efficient,standard; cons:).     http://www.json.org/ ; https://github.com/nlohmann/json
     -   YAML (pros:JSON superset; cons: ).                           http://en.wikipedia.org/wiki/YAML
 	-   BSON (Binary JSON)  (pros:;cons:not so fast)                 http://bsonspec.org/
 	-   PSON (Protocol JSON)  (pros:fast,compact; cons:no C++)       https://github.com/dcodeIO/PSON
@@ -75,4 +75,5 @@ References:
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-combowidgetmapper-example.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-chart-example.html
 	https://github.com/dridk/QJsonModel   (JSON + QTreeView)
+	https://disqus.com/home/discussion/codeclimateblog/5_reasons_to_use_protocol_buffers_instead_of_json_for_your_next_service/
 	
