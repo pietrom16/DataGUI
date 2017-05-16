@@ -51,6 +51,7 @@ private:
     bool modifiedData = false;
 
 private slots:
+    int fileOpen();
 	int databaseConnect();
 	int serverConnect();
 	int pause();
@@ -70,8 +71,9 @@ private:
     void createConnections();
 
 private:
-	QAction *databaseConnectAct;
-	QAction *serverConnectAct;
+    QAction *fileOpenAct;
+    QAction *databaseConnectAct;
+    QAction *serverConnectAct;
 	QAction *pauseAct;
 	QAction *reloadAct;
 	QAction *searchAct;
