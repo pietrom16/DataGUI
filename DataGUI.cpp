@@ -2,9 +2,18 @@
 
 
 #include "DataGUI.hpp"
+#include "TreeItem.hpp"
+#include "TreeModel.hpp"
+
+#include <iostream>
 
 #include <QAction>
 #include <QApplication>
+#include <QErrorMessage>
+#include <QJsonValue>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QLabel>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
