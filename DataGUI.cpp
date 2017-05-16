@@ -98,7 +98,11 @@ int DataGUI::terminateServer() { return -1; }
 
 int DataGUI::quitGui()
 {
-	//+TODO - Ask whether to save
+    if(modifiedData && openMode != QIODevice::ReadOnly)
+    {
+        //+TODO - Ask whether to save
+    }
+
 	exit(0);
 }
 
