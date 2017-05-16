@@ -72,6 +72,41 @@ DataGUI::DataGUI(QWidget *parent)
 
     setMinimumSize(160, 160);
     resize(480, 320);
+
+    treeParamView = new QTreeView;
+
+    treeModel = new TreeModel(this);
+    treeParamView->setModel(treeModel);
+
+    //+T+
+    std::string json = R"({
+                       "firstName": "John",
+                       "lastName": "Smith",
+                       "age": 25,
+                       "address":
+                       {
+                           "streetAddress": "21 2nd Street",
+                           "city": "New York",
+                           "state": "NY",
+                           "postalCode": "10021"
+                       },
+                       "phoneNumber":
+                       [
+                           {
+                             "type": "home",
+                             "number": "212 555-1234"
+                           },
+                           {
+                             "type": "fax",
+                             "number": "646 555-4567"
+                           }
+                       ]
+                   })";
+
+    LoadJson(QByteArray::fromStdString(json));
+    treeParamView->show();
+
+    statusBar()->showMessage(tr("Ready"));
 }
 
 
