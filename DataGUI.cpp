@@ -85,14 +85,15 @@ void DataGUI::contextMenuEvent(QContextMenuEvent *event)
 
 
 //+TODO
-int DataGUI::databaseConnect(){}
-int DataGUI::serverConnect(){}
-int DataGUI::pause(){}
-int DataGUI::reload(){}
-int DataGUI::search(){}
-int DataGUI::settings(){}
-int DataGUI::info(){}
-int DataGUI::terminateServer(){}
+int DataGUI::fileOpen() { return -1; }
+int DataGUI::databaseConnect() { return -1; }
+int DataGUI::serverConnect() { return -1; }
+int DataGUI::pause() { return -1; }
+int DataGUI::reload() { return -1; }
+int DataGUI::search() { return -1; }
+int DataGUI::settings() { return -1; }
+int DataGUI::info() { return -1; }
+int DataGUI::terminateServer() { return -1; }
 
 
 int DataGUI::quitGui()
