@@ -97,6 +97,12 @@ bool DataGUI::LoadJson(const QByteArray &json)
 }
 
 
+int DataGUI::Test()
+{
+	return 0;
+}
+
+
 void DataGUI::contextMenuEvent(QContextMenuEvent *event)
 {
     //+TODO
