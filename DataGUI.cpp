@@ -38,8 +38,11 @@ const char* const DataGUI::version = "0.0.3";
 DataGUI::DataGUI(QWidget *parent)
     :
       QMainWindow(parent),
-      treeParamView(0)
+      treeParamView(0),
+      serverIcon(0)
 {
+    statusBar()->showMessage(tr("Initialize..."));
+
     servedApp = "Not connected";
     servedAppComment = "-";
     servedAppVersion = "-";
