@@ -82,8 +82,11 @@ private:
 	QAction *aboutAct;
     QAction *aboutQtAct;
 
-    QTreeView *treeParamView;
+private:
+    QTreeView *treeParamView = 0;
+    TreeModel *treeModel = 0;
 
+    QIcon *serverIcon = 0;
 };
 
 
