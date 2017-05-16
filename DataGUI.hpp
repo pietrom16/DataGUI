@@ -30,6 +30,10 @@ public:
     explicit DataGUI(QWidget *parent = 0);
     ~DataGUI();
 
+    bool Load(const QString &fileName);
+    bool Load(QIODevice *device);
+    bool LoadJson(const QByteArray &json);
+
 	int Test();
 
 protected:
