@@ -79,9 +79,21 @@ DataGUI::~DataGUI()
 {}
 
 
-int DataGUI::Test()
+bool DataGUI::Load(const QString &fileName)
 {
-	return 0;
+    return treeModel->Load(fileName);
+}
+
+
+bool DataGUI::Load(QIODevice *device)
+{
+    return treeModel->Load(device);
+}
+
+
+bool DataGUI::LoadJson(const QByteArray &json)
+{
+    return treeModel->LoadJson(json);
 }
 
 
