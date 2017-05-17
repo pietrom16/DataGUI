@@ -12,6 +12,7 @@
 
 namespace GuiUtilities {
 
+class TreeItem;
 
 /** JsonTree
  *  Extension of a QTreeView to store JSON data.
@@ -21,7 +22,7 @@ class JsonTree : public QAbstractItemModel
 {
     Q_OBJECT
 public:
-    explicit QJsonModel(QObject *parent = 0);
+	explicit JsonTree(QObject *parent = 0);
     bool load(const QString& fileName);
     bool load(QIODevice * device);
     bool loadJson(const QByteArray& json);
@@ -33,9 +34,9 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
 private:
-    QJsonTreeItem * mRootItem;
+	TreeItem     *mRootItem;
     QJsonDocument mDocument;
-    QStringList mHeaders;
+	QStringList   mHeaders;
 };
 
 

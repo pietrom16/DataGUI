@@ -1,6 +1,8 @@
 /// JsonTree.cpp
 
 #include "JsonTree.hpp"
+#include "TreeItem.hpp"
+#include <QFile>
 
 namespace GuiUtilities {
 
@@ -9,7 +11,7 @@ namespace GuiUtilities {
 JsonTree::JsonTree(QObject *parent) :
     QAbstractItemModel(parent)
 {
-    mRootItem = new QJsonTreeItem;
+	mRootItem = new TreeItem;
     mHeaders.append("Key");
     mHeaders.append("Value");
 }
@@ -40,9 +42,9 @@ bool JsonTree::loadJson(const QByteArray &json)
     {
         beginResetModel();
         if (mDocument.isArray()) {
-            mRootItem = QJsonTreeItem::load(QJsonValue(mDocument.array()));
+			mRootItem = TreeItem::load(QJsonValue(mDocument.array()));
         } else {
-            mRootItem = QJsonTreeItem::load(QJsonValue(mDocument.object()));
+			mRootItem = TreeItem::load(QJsonValue(mDocument.object()));
         }
         endResetModel();
         return true;
@@ -60,7 +62,7 @@ QVariant JsonTree::data(const QModelIndex &index, int role) const
         return QVariant();
 
 
-    QJsonTreeItem *item = static_cast<QJsonTreeItem*>(index.internalPointer());
+	TreeItem *item = static_cast<TreeItem*>(index.internalPointer());
 
 
     if (role == Qt::DisplayRole) {
@@ -96,14 +98,14 @@ QModelIndex JsonTree::index(int row, int column, const QModelIndex &parent) cons
     if (!hasIndex(row, column, parent))
         return QModelIndex();
 
-    QJsonTreeItem *parentItem;
+	TreeItem *parentItem;
 
     if (!parent.isValid())
         parentItem = mRootItem;
     else
-        parentItem = static_cast<QJsonTreeItem*>(parent.internalPointer());
+		parentItem = static_cast<TreeItem*>(parent.internalPointer());
 
-    QJsonTreeItem *childItem = parentItem->child(row);
+	TreeItem *childItem = parentItem->child(row);
     if (childItem)
         return createIndex(row, column, childItem);
     else
@@ -115,8 +117,8 @@ QModelIndex JsonTree::parent(const QModelIndex &index) const
     if (!index.isValid())
         return QModelIndex();
 
-    QJsonTreeItem *childItem = static_cast<QJsonTreeItem*>(index.internalPointer());
-    QJsonTreeItem *parentItem = childItem->parent();
+	TreeItem *childItem = static_cast<TreeItem*>(index.internalPointer());
+	TreeItem *parentItem = childItem->parent();
 
     if (parentItem == mRootItem)
         return QModelIndex();
@@ -126,14 +128,14 @@ QModelIndex JsonTree::parent(const QModelIndex &index) const
 
 int JsonTree::rowCount(const QModelIndex &parent) const
 {
-    QJsonTreeItem *parentItem;
+	TreeItem *parentItem;
     if (parent.column() > 0)
         return 0;
 
     if (!parent.isValid())
         parentItem = mRootItem;
     else
-        parentItem = static_cast<QJsonTreeItem*>(parent.internalPointer());
+		parentItem = static_cast<TreeItem*>(parent.internalPointer());
 
     return parentItem->childCount();
 }
