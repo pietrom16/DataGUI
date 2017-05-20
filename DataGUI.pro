@@ -15,26 +15,26 @@ TEMPLATE = app
 SOURCES += \
 	DataGUI.cpp \
 	entrypoint.cpp \
-    progArgs.cpp \
-    TreeItem.cpp \
-    JsonTree.cpp \
-    TreeModel.cpp
+	progArgs.cpp \
+	TreeItem.cpp \
+	JsonTree.cpp \
+	TreeModel.cpp
 
 HEADERS += \
 	DataGUI.hpp \
-    progArgs.h \
-    TreeItem.hpp \
-    JsonTree.hpp \
-    TreeModel.hpp
+	progArgs.h \
+	TreeItem.hpp \
+	JsonTree.hpp \
+	TreeModel.hpp
 
 OTHER_FILES += \
-    TODO
+	TODO
 
 RESOURCES += \
-    DataGUI.qrc
+	DataGUI.qrc
 
 DISTFILES += \
-    LICENSE \
-    README.md \
-    gitignore \
-    LICENSE_3rdParty
+	LICENSE \
+	README.md \
+	gitignore \
+	LICENSE_3rdParty
