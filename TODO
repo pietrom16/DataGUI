@@ -6,13 +6,18 @@ Requirements:
 - File formats to exchange data with the core app:
 2	--> Cap’n Proto (pros:fastest,compact; cons:)                    https://capnproto.org/
     ->  ProtoBuf (pros:fast,compact,comments; cons:)                 https://developers.google.com/protocol-buffers/
-1	==> JSON (pros:simple,structured,efficient,standard; cons:).     http://www.json.org/ ; https://github.com/nlohmann/json
+1	==> JSON (pros:simple,structured,efficient,standard;             http://www.json.org/ ; https://github.com/nlohmann/json
+               cons:no comments).
     -   YAML (pros:JSON superset; cons: ).                           http://en.wikipedia.org/wiki/YAML
 	-   BSON (Binary JSON)  (pros:;cons:not so fast)                 http://bsonspec.org/
 	-   PSON (Protocol JSON)  (pros:fast,compact; cons:no C++)       https://github.com/dcodeIO/PSON
 	-   MessagePack                                                  http://msgpack.org/
 	-   XML  (pros:universal,structured,standard; cons:inefficient). http://en.wikipedia.org/wiki/XML_data_binding
 	-   Plain text format, tag/value (pros:simple; cons:unstructured).
+
+- Use two data structures:
+    - One for the complete {tag, value, range, comment}, to be sent once (or when there is a change).
+	- One for {tag, value}, for normal comunication.
 
 - Allow to use a ram disk, a hard disk or a remote device to store data.
     In UNIX this is completely transparent.
