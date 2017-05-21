@@ -68,10 +68,10 @@ QVariant JsonTree::data(const QModelIndex &index, int role) const
     if (role == Qt::DisplayRole) {
 
         if (index.column() == 0)
-            return QString("%1").arg(item->key());
+            return item->Tag();
 
         if (index.column() == 1)
-            return QString("%1").arg(item->value());
+            return item->Val();
     }
 
 
