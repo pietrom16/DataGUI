@@ -118,7 +118,7 @@ QModelIndex JsonTree::parent(const QModelIndex &index) const
         return QModelIndex();
 
 	TreeItem *childItem = static_cast<TreeItem*>(index.internalPointer());
-	TreeItem *parentItem = childItem->parent();
+	TreeItem *parentItem = childItem->Parent();
 
     if (parentItem == mRootItem)
         return QModelIndex();
@@ -137,7 +137,7 @@ int JsonTree::rowCount(const QModelIndex &parent) const
     else
 		parentItem = static_cast<TreeItem*>(parent.internalPointer());
 
-    return parentItem->childCount();
+    return parentItem->ChildCount();
 }
 
 int JsonTree::columnCount(const QModelIndex &parent) const
