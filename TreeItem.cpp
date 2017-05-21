@@ -8,10 +8,15 @@
 namespace GuiUtilities {
 
 
-TreeItem::TreeItem(const QVector<QVariant> &_data, TreeItem *_parent)
+TreeItem::TreeItem(TreeItem *_parent)
+	: parentItem(_parent)
 {
-    parentItem = _parent;
-    itemData = _data;
+}
+
+
+TreeItem::TreeItem(const QVector<QVariant> &_data, TreeItem *_parent)
+    : itemData(_data), parentItem(_parent)
+{
 }
 
 

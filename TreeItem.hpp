@@ -17,7 +17,8 @@ namespace GuiUtilities {
 class TreeItem
 {
 public:
-    explicit TreeItem(const QVector<QVariant> &_data, TreeItem *_parent = 0);
+	explicit TreeItem(TreeItem *_parent = 0);
+	explicit TreeItem(const QVector<QVariant> &_data, TreeItem *_parent = 0);
     ~TreeItem();
 
     // Getters
