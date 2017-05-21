@@ -42,9 +42,9 @@ bool JsonTree::LoadJson(const QByteArray &json)
     {
         beginResetModel();
         if (mDocument.isArray()) {
-			mRootItem = TreeItem::load(QJsonValue(mDocument.array()));
+			mRootItem = TreeItem::Load(QJsonValue(mDocument.array()));
         } else {
-			mRootItem = TreeItem::load(QJsonValue(mDocument.object()));
+			mRootItem = TreeItem::Load(QJsonValue(mDocument.object()));
         }
         endResetModel();
         return true;

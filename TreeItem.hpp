@@ -48,9 +48,7 @@ public:
     bool InsertColumns(int _pos, int _columns);
     bool RemoveColumns(int _pos, int _columns);
 
-/* //+TODO
-    static TreeItem* Load(const QJsonValue& _value, TreeItem *_parent = 0);
-*/
+    static TreeItem* Load(const QJsonValue& _value, TreeItem *_parent = 0); //+TODO & rename
 
 private:
     QVector<QVariant>  itemData;        // item with multiple columns: {tag, value, range, comment}
