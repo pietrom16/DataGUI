@@ -50,8 +50,7 @@ bool JsonTree::loadJson(const QByteArray &json)
         return true;
     }
 
-    qDebug() << Q_FUNC_INFO << "cannot load json";
-    return false;
+    return false;	// cannot load json file
 }
 
 
