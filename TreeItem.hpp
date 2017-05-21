@@ -36,8 +36,8 @@ public:
     // Setters
 
     bool SetData(int _col, const QVariant &_value);
-    bool SetTag(const QVariant &_tag) { itemData[0] = _tag; }
-    bool SetVal(const QVariant &_val) { itemData[1] = _val; }
+    bool SetTag(const QVariant &_tag) { itemData[0] = _tag; return true; }
+    bool SetVal(const QVariant &_val) { itemData[1] = _val; return true; }
 
     void AppendChild(TreeItem *_child) { childItems.append(_child); }
     bool RemoveChild(int _pos);
