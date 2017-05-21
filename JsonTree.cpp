@@ -50,20 +50,17 @@ bool JsonTree::loadJson(const QByteArray &json)
         return true;
     }
 
-    qDebug()<<Q_FUNC_INFO<<"cannot load json";
+    qDebug() << Q_FUNC_INFO << "cannot load json";
     return false;
 }
 
 
 QVariant JsonTree::data(const QModelIndex &index, int role) const
 {
-
     if (!index.isValid())
         return QVariant();
 
-
 	TreeItem *item = static_cast<TreeItem*>(index.internalPointer());
-
 
     if (role == Qt::DisplayRole) {
 
@@ -74,10 +71,7 @@ QVariant JsonTree::data(const QModelIndex &index, int role) const
             return item->Val();
     }
 
-
-
     return QVariant();
-
 }
 
 QVariant JsonTree::headerData(int section, Qt::Orientation orientation, int role) const
