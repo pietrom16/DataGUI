@@ -16,12 +16,12 @@ JsonTree::JsonTree(QObject *parent) :
     mHeaders.append("Value");
 }
 
-bool JsonTree::load(const QString &fileName)
+bool JsonTree::Load(const QString &fileName)
 {
     QFile file(fileName);
     bool success = false;
     if (file.open(QIODevice::ReadOnly)) {
-        success = load(&file);
+        success = Load(&file);
         file.close();
     }
     else success = false;
@@ -29,12 +29,12 @@ bool JsonTree::load(const QString &fileName)
     return success;
 }
 
-bool JsonTree::load(QIODevice *device)
+bool JsonTree::Load(QIODevice *device)
 {
-    return loadJson(device->readAll());
+    return LoadJson(device->readAll());
 }
 
-bool JsonTree::loadJson(const QByteArray &json)
+bool JsonTree::LoadJson(const QByteArray &json)
 {
     mDocument = QJsonDocument::fromJson(json);
 

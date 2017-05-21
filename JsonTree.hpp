@@ -23,9 +23,9 @@ class JsonTree : public QAbstractItemModel
     Q_OBJECT
 public:
 	explicit JsonTree(QObject *parent = 0);
-    bool load(const QString& fileName);
-    bool load(QIODevice * device);
-    bool loadJson(const QByteArray& json);
+    bool Load(const QString& fileName);
+    bool Load(QIODevice * device);
+    bool LoadJson(const QByteArray& json);
     QVariant data(const QModelIndex &index, int role) const Q_DECL_OVERRIDE;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const Q_DECL_OVERRIDE;
     QModelIndex index(int row, int column,const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
