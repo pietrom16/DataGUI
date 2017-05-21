@@ -98,7 +98,7 @@ QModelIndex JsonTree::index(int row, int column, const QModelIndex &parent) cons
     else
 		parentItem = static_cast<TreeItem*>(parent.internalPointer());
 
-	TreeItem *childItem = parentItem->child(row);
+	TreeItem *childItem = parentItem->Child(row);
     if (childItem)
         return createIndex(row, column, childItem);
     else
