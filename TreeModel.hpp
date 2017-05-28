@@ -67,7 +67,7 @@ private:
 
     TreeItem      *rootItem = 0;
     QJsonDocument  document;
-    //+D? QStringList    headers;
+    QStringList    headers;
 };
 
 
