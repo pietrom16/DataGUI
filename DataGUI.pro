@@ -25,7 +25,8 @@ HEADERS += \
 	progArgs.h \
 	TreeItem.hpp \
 	JsonTree.hpp \
-	TreeModel.hpp
+	TreeModel.hpp \
+    DevUtils.h
 
 OTHER_FILES += \
 	TODO
@@ -37,4 +38,5 @@ DISTFILES += \
 	LICENSE \
 	README.md \
 	gitignore \
-	LICENSE_3rdParty
+	LICENSE_3rdParty \
+    DataGUI.config

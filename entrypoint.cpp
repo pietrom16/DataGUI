@@ -6,6 +6,7 @@
 */
 
 #include "DataGUI.hpp"
+#include "DevUtils.h"
 #include "progArgs.h"
 #include <iostream>
 #include <string>
@@ -19,7 +20,7 @@ static const int vers = 0, subvers = 0, subsubvers = 1;
 
 int main(int argc, char *argv[])
 {
-    /// --- Command line parameters
+	/// --- Command line parameters
 
     ProgArgs            arguments;
     ProgArgs::Argument  arg;
@@ -63,6 +64,8 @@ int main(int argc, char *argv[])
 
 
     /// --- Start GUI
+
+	TRACE;
 
     QApplication app(argc, argv);
 
