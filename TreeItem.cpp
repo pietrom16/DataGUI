@@ -118,7 +118,7 @@ bool TreeItem::RemoveColumns(int _pos, int _columns)
 TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
 {
     TreeItem *rootItem = new TreeItem(_parent);
-    rootItem->SetKey("root");
+    rootItem->SetTag("root");
 
     if(_value.isObject())
     {
@@ -127,7 +127,7 @@ TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
         {
             const QJsonValue v = _value.toObject().value(key);
             TreeItem *child = Load(v, rootItem);
-            child->SetKey(key);
+            child->SetTag(key);
             child->SetType(v.type());
             rootItem->AppendChild(child);
         }
@@ -139,7 +139,7 @@ TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
         for(QJsonValue v : _value.toArray())
         {
             TreeItem *child = Load(v, rootItem);
-            child->SetKey(QString::number(index));
+            child->SetTag(QString::number(index));
             child->SetType(v.type());
             rootItem->AppendChild(child);
             ++index;
