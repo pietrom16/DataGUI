@@ -128,6 +128,48 @@ Qt::ItemFlags TreeModel::flags(const QModelIndex &index) const
 }
 
 
+bool TreeModel::setData(const QModelIndex &index, const QVariant &value,
+                        int role)
+{
+    return false;   //+TODO
+}
+
+
+bool TreeModel::setHeaderData(int section, Qt::Orientation orientation,
+                              const QVariant &value, int role)
+{
+    return false;   //+TODO
+}
+
+
+bool TreeModel::insertColumns(int position, int columns,
+                              const QModelIndex &parent)
+{
+    return false;   //+TODO
+}
+
+
+bool TreeModel::removeColumns(int position, int columns,
+                              const QModelIndex &parent)
+{
+    return false;   //+TODO
+}
+
+
+bool TreeModel::insertRows(int position, int rows,
+                           const QModelIndex &parent)
+{
+    return false;   //+TODO
+}
+
+
+bool TreeModel::removeRows(int position, int rows,
+                           const QModelIndex &parent)
+{
+    return false;   //+TODO
+}
+
+
 bool TreeModel::Load(const QString &fileName)
 {
     QFile file(fileName);
@@ -178,6 +220,12 @@ bool TreeModel::LoadJson(const QByteArray &json)
     std::cerr << Q_FUNC_INFO << " Error: cannot load JSON file.";
 
     return false;
+}
+
+
+void TreeModel::setupModelData(const QStringList &lines, TreeItem *parent)
+{
+    //+TODO
 }
 
 
