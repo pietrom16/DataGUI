@@ -121,7 +121,6 @@ TreeItem* TreeItem::Load(const ItemData& _value, TreeItem* _parent)
 }
 
 
-/*
 TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
 {
     TreeItem *rootItem = new TreeItem(_parent);
@@ -135,7 +134,7 @@ TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
             const QJsonValue v = _value.toObject().value(key);
             TreeItem *child = Load(v, rootItem);
             child->SetTag(key);
-            child->SetType(v.type());
+            //+TODO child->SetType(v.type());
             rootItem->AppendChild(child);
         }
     }
@@ -147,19 +146,19 @@ TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
         {
             TreeItem *child = Load(v, rootItem);
             child->SetTag(QString::number(index));
-            child->SetType(v.type());
+            //+TODO child->SetType(v.type());
             rootItem->AppendChild(child);
             ++index;
         }
     }
     else
     {
-        rootItem->SetValue(_value.toVariant().toString());
-        rootItem->SetType(_value.type());
+        rootItem->SetVal(_value.toVariant().toString());
+        //+TODO rootItem->SetType(_value.type());
     }
 
     return rootItem;
 }
-*/
+
 
 } // GuiUtilities
