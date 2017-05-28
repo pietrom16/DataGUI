@@ -56,7 +56,8 @@ public:
     bool InsertColumns(int _pos, int _columns);
     bool RemoveColumns(int _pos, int _columns);
 
-    static TreeItem* Load(const QJsonValue& _value, TreeItem *_parent = 0); //+TODO & rename
+	static TreeItem* Load(const ItemData& _value, TreeItem *_parent = 0); //+TODO & rename
+	static TreeItem* Load(const QJsonValue& _value, TreeItem *_parent = 0); //+TODO & rename
 
 private:
     ItemData           itemData;        // item with multiple columns: {tag, value, range, comment}

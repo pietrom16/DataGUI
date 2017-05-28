@@ -114,6 +114,13 @@ bool TreeItem::RemoveColumns(int _pos, int _columns)
     return true;
 }
 
+
+TreeItem* TreeItem::Load(const ItemData& _value, TreeItem* _parent)
+{
+    //+TODO
+}
+
+
 /*
 TreeItem* TreeItem::Load(const QJsonValue& _value, TreeItem* _parent)
 {
