@@ -12,7 +12,7 @@ namespace GuiUtilities {
 TreeModel::TreeModel(const QStringList &_headers, const QString &_data, QObject *_parent)
     : QAbstractItemModel(_parent)
 {
-    QVector<QVariant> rootData;
+    ItemData rootData;
     foreach(QString header, _headers)
         rootData << header;
 
@@ -24,7 +24,7 @@ TreeModel::TreeModel(const QStringList &_headers, const QString &_data, QObject 
 TreeModel::TreeModel(QObject *_parent)
     : QAbstractItemModel(_parent)
 {
-    QVector<QVariant> rootData;
+    ItemData rootData;
     rootData << "Tag" << "Value";
 
     rootItem = new TreeItem(rootData);
