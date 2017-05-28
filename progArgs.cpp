@@ -140,22 +140,22 @@ void ProgArgs::Argument::Print() const
 void ProgArgs::Argument::Help() const
 {
 	// Alignment of the description field:
-	int     desc_dist = desc_dist_max - (2 + shortTag.size() + 2 + tag.size() + 3);
+	int     desc_dist = int(desc_dist_max - (2 + shortTag.size() + 2 + tag.size() + 3));
 	string  tabulation;
 
-	if (desc_dist > 0)
+	if(desc_dist > 0)
 	{
-		tabulation.append (desc_dist, ' ');
+		tabulation.append(desc_dist, ' ');
 	}
 	else
 	{
-		tabulation.append ("\n\r");
-		tabulation.append (desc_dist_max, ' ');
+		tabulation.append("\n\r");
+		tabulation.append(desc_dist_max, ' ');
 	}
 
 	cout << "  " << shortTag << ", " << tag << tabulation << desc;
 
-	if (defaultAvailable)
+	if(defaultAvailable)
 		cout << " (default = " << defaultValue << ")";
 
 	cout << "." << endl;
