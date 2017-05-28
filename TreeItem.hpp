@@ -36,6 +36,12 @@ public:
 
     TreeItem* Parent()        const { return parentItem; }
 
+	int row() const {
+        if(parentItem)
+            return parentItem->childItems.indexOf(const_cast<TreeItem*>(this));
+        return 0;
+    }
+
     // Setters
 
     bool SetData(int _col, const QVariant &_value);
