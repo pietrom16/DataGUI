@@ -10,6 +10,8 @@
 
 namespace GuiUtilities {
 
+typedef QVector<QVariant> ItemData;        // item with multiple columns: {tag, value, min, max, comment}
+
 /**
  * A container of data items supplied by the tree model.
  */
@@ -18,7 +20,7 @@ class TreeItem
 {
 public:
 	explicit TreeItem(TreeItem *_parent = 0);
-	explicit TreeItem(const QVector<QVariant> &_data, TreeItem *_parent = 0);
+	explicit TreeItem(const ItemData &_data, TreeItem *_parent = 0);
     ~TreeItem();
 
     // Getters
@@ -51,7 +53,7 @@ public:
     static TreeItem* Load(const QJsonValue& _value, TreeItem *_parent = 0); //+TODO & rename
 
 private:
-    QVector<QVariant>  itemData;        // item with multiple columns: {tag, value, range, comment}
+    ItemData           itemData;        // item with multiple columns: {tag, value, range, comment}
     TreeItem          *parentItem;
     QList<TreeItem*>   childItems;
 };

@@ -1,4 +1,4 @@
-/// TreeItem.hpp
+/// TreeItem.cpp
 
 #include "TreeItem.hpp"
 #include <QJsonArray>
@@ -14,7 +14,7 @@ TreeItem::TreeItem(TreeItem *_parent)
 }
 
 
-TreeItem::TreeItem(const QVector<QVariant> &_data, TreeItem *_parent)
+TreeItem::TreeItem(const ItemData &_data, TreeItem *_parent)
     : itemData(_data), parentItem(_parent)
 {
 }
@@ -64,7 +64,7 @@ bool TreeItem::InsertChildren(int _pos, int _count, int _columns)
 
     for(int row = 0; row < _count; ++row)
     {
-        QVector<QVariant> data(_columns);
+        ItemData data(_columns);
         TreeItem *item = new TreeItem(data, this);
         childItems.insert(_pos, item);
     }
