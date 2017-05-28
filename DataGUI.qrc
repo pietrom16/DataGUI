@@ -2,7 +2,6 @@
 <qresource>
     <file>images/database-1.svg</file>
 	<file>images/server-1.svg</file>
-	<file>images/server-1.png</file>
 	<file>images/pause-1.svg</file>
 	<file>images/reload.svg</file>
 	<file>images/search-1.svg</file>
