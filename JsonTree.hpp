@@ -34,7 +34,7 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const Q_DECL_OVERRIDE;
 
 private:
-	TreeItem     *mRootItem;
+	TreeItem     *mRootItem = 0;
     QJsonDocument mDocument;
 	QStringList   mHeaders;
 };

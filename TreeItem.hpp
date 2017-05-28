@@ -54,7 +54,7 @@ public:
 
 private:
     ItemData           itemData;        // item with multiple columns: {tag, value, range, comment}
-    TreeItem          *parentItem;
+    TreeItem          *parentItem = 0;
     QList<TreeItem*>   childItems;
 };
 

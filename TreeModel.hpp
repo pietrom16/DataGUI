@@ -65,7 +65,7 @@ private:
     void setupModelData(const QStringList &lines, TreeItem *parent);
     TreeItem *getItem(const QModelIndex &index) const;
 
-    TreeItem      *rootItem;
+    TreeItem      *rootItem = 0;
     QJsonDocument  document;
     //+D? QStringList    headers;
 };
