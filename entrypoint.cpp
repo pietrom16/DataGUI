@@ -20,11 +20,15 @@ static const int vers = 0, subvers = 0, subsubvers = 1;
 
 int main(int argc, char *argv[])
 {
+	TRACE;
+
 	/// --- Command line parameters
 
     ProgArgs            arguments;
     ProgArgs::Argument  arg;
 	std::string         value;
+
+	TRACE;
 
     // Add the set of possible parameters:
     arg.Set("--parameters", "-p", "Path of the XML parameters file");
@@ -69,13 +73,17 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-    app.setApplicationName(app.translate("main", "DataGUI"));
+	TRACE;
+
+	app.setApplicationName(app.translate("main", "DataGUI"));
     //+TODO app.setWindowIcon(QIcon(":/icon.png"));
     app.setOrganizationName("Pietro Mele");
     app.setOrganizationDomain("https://sites.google.com/site/pietrom16");
 #ifdef Q_WS_MAC
     app.setCursorFlashTime(0);
 #endif
+
+	TRACE;
 
     DataGUI dataGui;
     dataGui.show();
