@@ -1,17 +1,19 @@
-DataGUI - TODO
+# DataGUI - TODO
 
 
-Requirements:
+#### Requirements
 
 - File formats to exchange data with the core app:
-    ==> Plain text format, tag/value (pros: simple; cons: unstructured).
-	--> JSON (pros: simple, structured, efficient; cons: ).     http://www.json.org/
-	-   XML  (pros: universal, structured; cons: inefficient).  http://en.wikipedia.org/wiki/XML_data_binding
-	-   YAML (pros: JSON superset; cons: ).                     http://en.wikipedia.org/wiki/YAML
-	-   Google Protocol Buffers: ?
+	- **JSON** (pros: universal, simple, structured, efficient; cons: ). http://www.json.org/
+	- `XML`  (pros: universal, structured; cons: inefficient, verbose). http://en.wikipedia.org/wiki/XML_data_binding  
+	- `YAML` (pros: JSON superset; cons: not as spread). http://en.wikipedia.org/wiki/YAML
+	- `Plain text format` (pros: simple; cons: unstructured).
+	- `Google Protocol Buffers`: ?
 
-- Allow to use a ram disk, a hard disk or a remote device to store data.
+- Allow to use a ram disk, a hard disk or a remote device to store data.  
     In UNIX this is completely transparent.
+- Optionally use other IPC methods (ref.: http://en.wikipedia.org/wiki/Interprocess_communication).
+- Optionally use a database.
 
 - For each parameter, show the date of the last change.
 
@@ -29,15 +31,21 @@ Requirements:
 	- If an existing tag is sent, update its corresponding value and date.
 	- This point has less priority in case the RAM disk is used.
 
-- See if a file is the best way to transfer data, or if there is a better solution (e.g. message queue, ...).
-  Ref.: http://en.wikipedia.org/wiki/Interprocess_communication
+- Two usage modes:
+	- Viewer.
+	- Viewer and setter (a subset of the parameters may be modifiable).
 
 - Considerations
     - Some of these functionalities are typical of:
 		- Spreadsheets:
 		 	- Cons: not optimized for partial data changes; no tree structure.
 		- Databases:
-		    - Cons: overkill for this task.
+		    - Pros:
+				- SQLite can be a good tool.
+			    - Advanced interaction (possibility to view/modify multiple parameters at once).
+			    - Nothing to do, apart from the DB itself.
+			- Cons: overkill for this task. Or maybe not?
+
 
 - Log user operations (different purposes: diagnostic, automated sets of operations, ...)
 
@@ -45,7 +53,8 @@ Requirements:
     - For each value modified by the user, as soon as the change takes place.
 	- For a bunch of changes, when the user presses the [commit]/[send]/[update]/... button.
 
-Implementation:
+
+#### Implementation:
 
 - QT
     - Use a QTreeView, not a QTreeWidget
@@ -53,21 +62,31 @@ Implementation:
 		- Different representation of the same data.
 		- ParamGUI2, DataGUI
 
-Customization:
+- HTML5
+	- Pros: can run on a mobile phone.
+	- https://github.com/jdorn/json-editor
 
-	- Load details about the core application to display in the corresponding dialog and on the title bar.
+#### Customization
+
+- Load details about the core application to display in the corresponding dialog and on the title bar.
 	- Load an icon to show on the GUI (useful to differentiate multiple GUIs for different apps).
 
+#### Bugs
 
-Bugs:
-    - Cannot commit the icons in git; gitignore is fine.
+    - Cannot commit the icons in git; gitignore is fine [?].
 
-References:
+#### References
 
+	http://doc.qt.io/qt-5/examples-itemviews.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-simpletreemodel-example.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-editabletreemodel-example.html
 	http://doc.qt.io/qt-5/qjsondocument.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-simplewidgetmapper-example.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-combowidgetmapper-example.html
 	http://doc.qt.io/qt-5/qtwidgets-itemviews-chart-example.html
-	
+
+
+#### Licenses
+
+	Icons:
+		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
